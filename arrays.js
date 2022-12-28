@@ -6,4 +6,7 @@ const aisles = [
     ['tomatoes', 'onions', 'lettice']
 ];
 
-console.log(aisles[1][0]);
+console.log(aisles[1]); // prints milk & cheese
+console.log(aisles[1][0]) // prints milk 
+
+// working off vscode
