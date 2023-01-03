@@ -9,4 +9,4 @@ const aisles = [
 console.log(aisles[1]); // prints milk & cheese
 console.log(aisles[1][0]) // prints milk 
 
-// working off vscode
+// working off of vscode 1/2/23
