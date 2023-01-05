@@ -40,3 +40,5 @@ for(const aisle of aisles) { // outer loop
         console.log(item);
     }
 }
+
+// debugging and stepping through the loops. 
