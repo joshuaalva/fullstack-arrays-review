@@ -50,7 +50,37 @@ console.log(relatedThings[1][0]); // output: New York
 
 let rsvpGroups = [['Jane', 'Mel'], 'Jack', ['Rohan', 'David', 'Meg']];
 
+for (let i = 0; i < rsvpGroups.length; i++){
+    // for loop
+    // initalizing counter variable --> test to see how long loop should continue --> itarator
+    let element = rsvpGroups[i]; // i is just the index 
 
+    if(Array.isArray(element)) {
+        for(let j = 0; j < element.length; j++) {
+            console.log(element[j]);
+        }
+    } else {
+        console.log(element);
+    }
+}
+
+// another use case of nested arrays 
+
+let grid = [
+    [1, 2, 3],
+    [4, 5, 6], 
+    [7, 8, 9]
+];
+
+console.log(grid[1]); // prints [4, 5, 6]
+
+let secondCol = [];
+for(let i = 0; i < grid.length; i++){
+    // extracting a second column in a scalable way 
+    secondCol.push(grid[i][1]);
+}
+
+console.log(secondCol);
 
 
 
