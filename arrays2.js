@@ -40,7 +40,16 @@ console.log(sentence);
 let older = ['Ringo', 'John'];
 let younger = ['Paul', 'George'];
 // lets see we wanted to combine both of these into one array 
-console.log(older.concat(younger));
+console.log(older.concat(younger)); // output: [ 'Ringo', 'John', 'Paul', 'George' ]
+
+// ----------
+
+let relatedThings = [['Windows', 'Mac'], ['New York', 'Chicago']];
+console.log(relatedThings.length); // output: 2
+console.log(relatedThings[1][0]); // output: New York
+
+let rsvpGroups = [['Jane', 'Mel'], 'Jack', ['Rohan', 'David', 'Meg']];
+
 
 
 
