@@ -1,21 +1,37 @@
 // 01 Even and Odd 
+// function evenAndOdd(arr){
+//     let evenArr = [];
+//     let oddArr = [];
+    
+//     for(let i = 0; i < arr.length; i++){
+//       let num = arr[i];
+      
+//       if(num % 2){
+//         oddArr.push(num);
+//       } else {
+//         evenArr.push(num);
+//       }
+//     }
+    
+//     return [evenArr, oddArr];
+//   };
+
+// second try 
 function evenAndOdd(arr){
-    // create arrays to store even and odd numbers
-    let evenArr = [];
-    let oddArr = [];
+    let evens = [];
+    let odds = [];
     
     for(let i = 0; i < arr.length; i++){
       let num = arr[i];
-      
-      if(num % 2){
-        oddArr.push(num);
+      if(num % 2 === 1){
+        odds.push(num);
       } else {
-        evenArr.push(num);
+        evens.push(num);
       }
     }
     
-    return [evenArr, oddArr];
-  };
+    return [evens, odds];
+  }
 
 describe('evenAndOdd', () => {
 
@@ -42,8 +58,43 @@ describe('evenAndOdd', () => {
 
   // 02 Array Flattner 
 
-  describe('arrayFlattener', () => {
+function arrayFlattener(twoDimensionalArray) {
 
+    // create the array to return at the end of the function
+    let flatArray = [];
+  
+    // loop through the original twoDimensionalArray
+    for (let i = 0; i < twoDimensionalArray.length; i++) {
+  
+      // store each element in a variable (optional)
+      let element = twoDimensionalArray[i];
+  
+      // if the element is an array...
+      if (Array.isArray(element)) {
+  
+        // loop through the inner array
+        for (let j = 0; j < element.length; j++) {
+  
+          // store each element from the inner array in a variable (also optional)
+          let innerElement = element[j];
+  
+          // push each element from the inner array into the flatArray
+          flatArray.push(innerElement);
+        }
+      }
+  
+      // else, the element is just a number and can be pushed into flatArray
+      else {
+        flatArray.push(element);
+      }
+    }
+  
+    // return the flatArray after the for loop
+    return flatArray;
+  }
+  
+  describe('arrayFlattener', () => {
+  
     it('is a function', () => {
       expect(typeof arrayFlattener).toEqual('function');
     });
@@ -78,5 +129,4 @@ describe('evenAndOdd', () => {
     });
   
   });
-  
   
