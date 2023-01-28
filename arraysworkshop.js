@@ -225,3 +225,89 @@
 //   });
 
 // });
+
+// 01 even and odds redo
+
+// function evenAndOdd(arr){
+//   // create evens and odds for the new arrays
+//   let evens = [];
+//   let odds = [];
+  
+//   // loop through the arr 
+//   for(let i = 0; i < arr.length; i++){
+//     // index the arr 
+//     let num = arr[i];
+//     // if % 2 = even push to evens / opposite for odds
+//     if(num % 2){
+//       odds.push(num);
+//     } else {
+//       evens.push(num);
+//     }
+//   }
+//   // return evens and odds new arrays
+//   return [evens, odds];
+// }
+
+// describe('evenAndOdd', () => {
+
+//   it('is a function', () => {
+//     expect(typeof evenAndOdd).toEqual('function');
+//   });
+
+//   it('returns an array', () => {
+//     let returnedValue = evenAndOdd([1, 2, 3]);
+//     expect(Array.isArray(returnedValue)).toEqual(true);
+//   });
+
+//   it('returns an array where the first element has all the even numbers from the original array', () => {
+//     let returnedValue = evenAndOdd([10, 15, 20, 25, 30]);
+//     expect(returnedValue[0]).toEqual([10, 20, 30]);
+//   });
+
+//   it('returns an array where the second element has all the odd numbers from the original array', () => {
+//     let returnedValue = evenAndOdd([7, 14, 21, 28, 35]);
+//     expect(returnedValue[1]).toEqual([7, 21, 35]);
+//   });
+
+// });
+
+// 02 ArrayFlattener Redo 
+
+describe('arrayFlattener', () => {
+
+  it('is a function', () => {
+    expect(typeof arrayFlattener).toEqual('function');
+  });
+
+  it('returns an array', () => {
+    let returnedValue = arrayFlattener([1, 2, [3]]);
+    expect(Array.isArray(returnedValue)).toEqual(true);
+  });
+
+  it('returns a one-dimensional array', () => {
+    // get the return value from the function
+    let returnedValue = arrayFlattener('this is crazy');
+
+    // make sure none of the elements in the array are an array
+    let foundInnerArray = false;
+
+    for (let i = 0; i < returnedValue.length; i++) {
+      let element = returnedValue[i];
+
+      if (Array.isArray(element)) {
+        foundInnerArray = true;
+        break;
+      }
+    }
+
+    expect(foundInnerArray).toEqual(false);
+  });
+
+  it('returns a one-dimensional array with the correct elements', () => {
+    let returnedValue = arrayFlattener(['I', 'am', 'working', ['on', 'another', 'level']]);
+    expect(returnedValue).toEqual(['I', 'am', 'working', 'on', 'another', 'level']);
+  });
+
+});
+
+
